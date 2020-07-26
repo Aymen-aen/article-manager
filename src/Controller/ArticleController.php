@@ -19,7 +19,7 @@ class ArticleController extends AbstractController
      * @Route("/", name="artilce_list")
      */
 
-    public function artilce_list(EntityManagerInterface $em, PaginatorInterface $paginator, Request $request)
+    public function article_list(EntityManagerInterface $em, PaginatorInterface $paginator, Request $request)
     {
         $dql   = "SELECT a FROM App:Article a";
         $query = $em->createQuery($dql);
@@ -62,7 +62,7 @@ class ArticleController extends AbstractController
             $em->persist($article);
             $em->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('article_list');
 
         }
         return $this->render('article/new.html.twig', [
@@ -86,7 +86,7 @@ class ArticleController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('article_list');
         }
         return $this->render("article/edit.html.twig", [
             "form" => $form->createView()
@@ -105,7 +105,7 @@ class ArticleController extends AbstractController
         $em->remove($article);
         $em->flush();
 
-        return $this->redirectToRoute("home");
+        return $this->redirectToRoute("article_list");
     }
 }
 
