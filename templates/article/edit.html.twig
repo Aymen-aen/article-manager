@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Edit Article {% endblock %}
+
+{% block body %}
+    <h1>Update Article </h1>
+
+    <main role="main" class="container" >
+        <div class="row">
+
+            <div class="col-md-8">
+
+                {{ form_start(form) }}
+
+
+                {{ include('article/form.html.twig') }}
+                <button class="btn btn-primary">Save</button>
+
+            </div>
+
+        </div>
+
+    </main>
+    {{ form_end(form) }}
+{% endblock %}

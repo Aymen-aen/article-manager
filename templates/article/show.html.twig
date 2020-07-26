@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ article.name }}
+{% endblock %}
+
+{% block body %}
+
+<main role="main" class="container" >
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="pb-3 mb-4 font-italic border-bottom">
+                {{ article.name }}
+            </h1>
+            <div class="text-justify">
+                <p> {{ article.description }}</p>
+            </div>
+            <hr>
+            <div class="text-justify">
+                <p>{{ article.body }}</p>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <a href="/">Go Back</a>
+
+
+</main>
+
+{% endblock %}

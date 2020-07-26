@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title%}Developer Task{% endblock title %}
+
+{% block body %}
+
+<main role="main" class="container">
+
+    <!--<div class="home"> <h1>HOME</h1> </div> -->
+
+
+    <div class="count">
+        Total Articles:   {{ pagination.getTotalItemCount }}
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                     <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col"></th>
+                   <!-- <th scope="col">BODY</th>-->
+                </tr>
+                </thead>
+                {% for article in pagination %}
+                <tbody>
+                <tr>
+                    <th scope="row">{{ article.id }}</th>
+                    <td>{{ article.name }}</td>
+                    <td class="description">{{ article.description }}</td>
+                    <!--<td>{{ article.body }}</td>-->
+                    <td>
+                        <div class="btn-group">
+                            <a href="{{ path('article_show', {"id":article.id}) }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="{{ path('article_edit', {"id":article.id}) }}" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="{{ path('article_delete', {"id":article.id}) }}" type="button" class="btn btn-sm btn-outline-secondary" onclick="return confirm('You Confirm To Delete The Selected Article!')">Delete</a>
+                        </div>
+                    </td>
+
+                </tr>
+                </tbody>
+              {% endfor %}
+
+                    <div class="navigation">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+
+            </table>
+</main>
+
+
+
+
+
+{% endblock body %}

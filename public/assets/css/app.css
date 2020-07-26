@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #131313;
+    background-color: #e6e4e47a;
+}
+/**
+.home{
+    margin: 40px;
+    border: 0px solid #0535c4;
+}
+*/
+
+.new-title{
+    color: #C82829;
+    text-align:center;
+
+}
+
+.description{
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
