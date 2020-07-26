@@ -3,7 +3,6 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
-use App\Form\ArtType;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,10 +15,10 @@ class ArticleController extends AbstractController
 {
 
     /**
-     * @Route("/", name="artilce_list")
+     * @Route("/", name="article_list")
      */
 
-    public function article_list(EntityManagerInterface $em, PaginatorInterface $paginator, Request $request)
+    public function list(EntityManagerInterface $em, PaginatorInterface $paginator, Request $request)
     {
         $dql   = "SELECT a FROM App:Article a";
         $query = $em->createQuery($dql);
@@ -35,7 +34,7 @@ class ArticleController extends AbstractController
 
 
     /**
-     * @Route("/{id}/show", name="article_show")
+     * @Route("/article/{id}/show", name="article_show")
      * @param Article $article
      * @return Response
      */
@@ -72,7 +71,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("article/{id}/edit", name="article_edit")
+     * @Route("/article/{id}/edit", name="article_edit")
      * @param Article $article
      * @param Request $request
      * @return Response
