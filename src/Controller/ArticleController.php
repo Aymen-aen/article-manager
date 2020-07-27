@@ -25,7 +25,8 @@ class ArticleController extends AbstractController
 
         $pagination = $paginator->paginate(
             $query,
-            $request->query->getInt('page', 1),5
+            $request->query->getInt('page', 1),
+            5
         );
 
 
