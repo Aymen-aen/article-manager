@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Article;
-use phpDocumentor\Reflection\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -16,19 +15,19 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                "attr" => [
-                    "class" => "form-control"
-                ]
+                'attr' => [
+                    'class' => 'form-control',
+                ],
             ])
             ->add('description', TextareaType::class, [
-                "attr" => [
-                    "class" => "form-control"
-                ]
+                'attr' => [
+                    'class' => 'form-control',
+                ],
             ])
             ->add('body', TextareaType::class, [
-                "attr" => [
-                    "class" => "form-control"
-                ]
+                'attr' => [
+                    'class' => 'form-control',
+                ],
             ])
         ;
     }

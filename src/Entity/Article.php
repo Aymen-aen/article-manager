@@ -2,8 +2,8 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -17,7 +17,6 @@ class Article
      * @ORM\Column(type="integer")
      */
     private $id;
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -74,5 +73,10 @@ class Article
         $this->body = $body;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
