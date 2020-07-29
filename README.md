@@ -34,6 +34,12 @@ php bin/console doctrine:schema:create
 php bin/console cache:clear
 ```
 
+- Running Symfony Applications
+
+```
+php -S 127.0.0.1:800 -t public
+```
+
 ## Usage
 
 This web application allows for managing articles.
